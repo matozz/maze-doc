@@ -2,10 +2,10 @@
 sidebar_position: 3
 ---
 
-# Supported components
+# 支持的组件
 
 
-**Implemented / Planned:**
+**已完成 / 计划中:**
 
 * Complex
   * **[Carousel ✓](https://www.npmjs.com/package/maze-ui)** 

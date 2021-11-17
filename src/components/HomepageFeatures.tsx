@@ -11,42 +11,50 @@ import MountainSvg from "../assets/mountain.svg";
 import TreeSvg from "../assets/tree.svg";
 import ReactSvg from "../assets/react.svg";
 
+import Translate, { translate } from "@docusaurus/Translate";
+
 type FeatureItem = {
-  title: string;
+  title: any;
   image: (cls: any) => JSX.Element;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: "Easy to Use",
+    title: <Translate id="feature.mountainTitle">Easy to Use</Translate>,
     image: (cls: any) => <MountainSvg className={cls} />,
     description: (
       <>
-        Maze provides a robust, customizable, and accessible library of
-        foundational and advanced components, enabling you to build your own
-        design system and develop React applications faster.
+        <Translate id="feature.mountain">
+          Maze provides a robust, customizable, and accessible library of
+          foundational and advanced components, enabling you to build your own
+          design system and develop React applications faster.
+        </Translate>
       </>
     ),
   },
   {
-    title: "Focus on What Matters",
+    title: <Translate id="feature.treeTitle">Focus on What Matters</Translate>,
     image: (cls: any) => <TreeSvg className={cls} />,
     description: (
       <>
-        Maze components work in isolation. They are self-supporting, and will
-        only inject the styles they need to display. They don't rely on any
-        global style-sheets.
+        <Translate id="feature.tree">
+          Maze components work in isolation. They are self-supporting, and will
+          only inject the styles they need to display. They don't rely on any
+          global style-sheets.
+        </Translate>
       </>
     ),
   },
   {
-    title: "Powered by React",
+    title: <Translate id="feature.reactTitle">Powered by React</Translate>,
     image: (cls: any) => <ReactSvg className={cls} />,
     description: (
       <>
-        Customize your website by reusing React. Maze can help your to develop
-        your website faster and more efficient.
+        <Translate id="feature.react">
+          Customize your website by reusing React. Maze can help your to develop
+          your website faster and more efficient.
+        </Translate>
       </>
     ),
   },
