@@ -9,8 +9,8 @@ const config = {
   title: "Maze UI",
   tagline:
     "Maze-UI is a simple and customizable component library to build faster, beautiful, and more accessible React applications.",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
+  url: "https://matozz.github.io",
+  baseUrl: "/maze-doc/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -26,7 +26,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://github.com/matozz/maze/tree/maze-doc",
+          editUrl: "https://github.com/matozz/maze-doc",
           sidebarCollapsible: true,
         },
         theme: {
