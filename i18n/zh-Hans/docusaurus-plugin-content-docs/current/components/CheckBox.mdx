@@ -1,0 +1,117 @@
+---
+sidebar_position: 5
+---
+
+import { useRef, useEffect } from "react";
+import { Grid, CheckBox } from "maze-ui";
+import { Wrapper } from "/src/components/ComponentsWrapper";
+
+# Checkbox 选择框
+
+多选框可用于打开或关闭选项。
+
+若一个列表存在多个选择项时，使用多选框替代开关控件，可以节省空间。 若只存在一个选择项，请避免使用多选框，而改用开关控件。
+
+## Basic checkboxes
+
+<Wrapper>
+  <Grid spacing={2} justifyContent="center">
+    <CheckBox defaultChecked />
+    <CheckBox />
+    <CheckBox disabled defaultChecked />
+    <CheckBox disabled />
+  </Grid>
+</Wrapper>
+
+```jsx
+<CheckBox defaultChecked />
+<CheckBox />
+<CheckBox disabled defaultChecked />
+<CheckBox disabled />
+```
+
+## Label
+
+You can provide a `label` to the Checkbox.
+
+<Wrapper>
+  <Grid spacing={2} justifyContent="center">
+    <CheckBox label="Label" defaultChecked />
+    <CheckBox label="Disabled" disabled />
+  </Grid>
+</Wrapper>
+
+```jsx
+<CheckBox label="Label" defaultChecked />
+<CheckBox label="Disabled" disabled />
+```
+
+## Size
+
+Use the `size` prop or customize the font size of the svg icons to change the size of the checkboxes.
+
+<Wrapper>
+  <Grid spacing={2} justifyContent="center">
+    <CheckBox size="small" defaultChecked />
+    <CheckBox size="medium" defaultChecked />
+    <CheckBox size="large" defaultChecked />
+  </Grid>
+</Wrapper>
+
+```jsx
+<CheckBox size="small" defaultChecked />
+<CheckBox size="medium" defaultChecked />
+<CheckBox size="large" defaultChecked />
+```
+
+## Colors
+
+<Wrapper>
+  <Grid spacing={2} justifyContent="center">
+    <CheckBox defaultChecked color="#2e7d32" />
+    <CheckBox defaultChecked color="#ed6c02" />
+    <CheckBox defaultChecked color="#d32f2f" />
+  </Grid>
+</Wrapper>
+
+```jsx
+<CheckBox defaultChecked color="#2e7d32" />
+<CheckBox defaultChecked color="#ed6c02" />
+<CheckBox defaultChecked color="#d32f2f" />
+```
+
+## Indeterminate
+
+A checkbox input can only have two states in a form: checked or unchecked. It either submits its value or doesn't. Visually, there are three states a checkbox can be in: checked, unchecked, or indeterminate.
+
+export const Indeterminate = () => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current.indeterminate = true;
+  }, []);
+  return (
+    <Wrapper>
+      <CheckBox label="Indeterminate" ref={ref} />
+    </Wrapper>
+  );
+};
+
+<Indeterminate />
+
+```jsx
+export const Indeterminate = () => {
+  const ref = useRef();
+  useEffect(() => {
+    ref.current.indeterminate = true;
+  }, []);
+  return <CheckBox label="Indeterminate" ref={ref} />;
+};
+```
+
+:::caution Warning
+
+Even though you can use `ref` to access the indeterminate state, we highly recommend not to use indeterminate if you really need it.
+
+When indeterminate is set, the value of the checked prop only impacts the form submitted values. It has no accessibility or UX implications.
+
+:::

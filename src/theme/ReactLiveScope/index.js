@@ -8,6 +8,7 @@
 import React from "react";
 import * as Maze from "maze-ui";
 import { Wrapper } from "@site/src/components/ComponentsWrapper";
+import { Item, Paper } from "@site/src/components/UtilComponents";
 
 const Highlight = ({ children, color }) => (
   <span
@@ -33,6 +34,8 @@ const ReactLiveScope = {
   Highlight,
   ...Maze,
   Wrapper,
+  Item,
+  Paper,
 };
 
 export default ReactLiveScope;

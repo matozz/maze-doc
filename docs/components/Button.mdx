@@ -20,16 +20,16 @@ The `Button` comes with three variants: text, contained (default), and outlined.
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="text" label="TEXT" />
-    <Button variant="contained" label="CONTAINED" />
-    <Button variant="outlined" label="OUTLINED" />
+    <Button variant="text">TEXT</Button>
+    <Button variant="contained">CONTAINED</Button>
+    <Button variant="outlined">OUTLINED</Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="text" label="TEXT" />
-<Button variant="contained" label="CONTAINED" />
-<Button variant="outlined" label="OUTLINED" />
+<Button variant="text">TEXT</Button>
+<Button variant="contained">CONTAINED</Button>
+<Button variant="outlined">OUTLINED</Button>
 ```
 
 ### Text button
@@ -38,14 +38,16 @@ The `Button` comes with three variants: text, contained (default), and outlined.
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="text" label="TEXT" />
-    <Button variant="text" label="DISABLED" disabled />
+    <Button variant="text">TEXT</Button>
+    <Button variant="text" disabled>
+      DISABLED
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="text" label="TEXT" />
-<Button variant="text" label="DISABLED" disabled />
+<Button variant="text">TEXT</Button>
+<Button variant="text" disabled>DISABLED</Button>
 ```
 
 ### Contained button
@@ -54,26 +56,32 @@ The `Button` comes with three variants: text, contained (default), and outlined.
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="contained" label="CONTAINED" />
-    <Button variant="contained" label="DISABLED" disabled />
+    <Button variant="contained">CONTAINED</Button>
+    <Button variant="contained" disabled>
+      DISABLED
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="contained" label="CONTAINED" />
-<Button variant="contained" label="DISABLED" disabled />
+<Button variant="contained">CONTAINED</Button>
+<Button variant="contained" disabled>DISABLED</Button>
 ```
 
 You can remove the elevation with the `preventElevation` prop.
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="contained" label="CONTAINED" preventElevation />
+    <Button variant="contained" preventElevation>
+      CONTAINED
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="contained" label="CONTAINED" preventElevation />
+<Button variant="contained" preventElevation>
+  CONTAINED
+</Button>
 ```
 
 :::tip Notes
@@ -90,14 +98,16 @@ Outlined buttons are also a lower emphasis alternative to contained buttons, or 
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="outlined" label="OUTLINED" />
-    <Button variant="outlined" label="DISABLED" disabled />
+    <Button variant="outlined">OUTLINED</Button>
+    <Button variant="outlined" disabled>
+      DISABLED
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="outlined" label="OUTLINED" />
-<Button variant="outlined" label="DISABLED" disabled />
+<Button variant="outlined">OUTLINED</Button>
+<Button variant="outlined" disabled>DISABLED</Button>
 ```
 
 ## Handling events
@@ -108,20 +118,18 @@ All components accept an onClick handler that is applied to the root DOM element
   <Grid spacing={2} justifyContent="center">
     <Button
       variant="contained"
-      label="Alert"
       onClick={() => alert("clicked")}
       color="#d32f2f"
-    />
+    >
+      Alert
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button
-  variant="contained"
-  label="Alert"
-  onClick={() => alert("clicked")}
-  color="#d32f2f"
-/>
+<Button variant="contained" onClick={() => alert("clicked")} color="#d32f2f">
+  Alert
+</Button>
 ```
 
 ## Sizes
@@ -131,19 +139,37 @@ For larger or smaller buttons, use the `size` prop.
 <Wrapper>
   <Grid spacing={3} direction="column">
     <Grid spacing={2}>
-      <Button variant="text" size="small" label="SMALL" />
-      <Button variant="text" size="medium" label="MEDIUM" />
-      <Button variant="text" size="large" label="LARGE" />
+      <Button variant="text" size="small">
+        SMALL
+      </Button>
+      <Button variant="text" size="medium">
+        MEDIUM
+      </Button>
+      <Button variant="text" size="large">
+        LARGE
+      </Button>
     </Grid>
     <Grid spacing={2}>
-      <Button variant="contained" size="small" label="SMALL" />
-      <Button variant="contained" size="medium" label="MEDIUM" />
-      <Button variant="contained" size="large" label="LARGE" />
+      <Button variant="contained" size="small">
+        SMALL
+      </Button>
+      <Button variant="contained" size="medium">
+        MEDIUM
+      </Button>
+      <Button variant="contained" size="large">
+        LARGE
+      </Button>
     </Grid>
     <Grid spacing={2}>
-      <Button variant="outlined" size="small" label="SMALL" />
-      <Button variant="outlined" size="medium" label="MEDIUM" />
-      <Button variant="outlined" size="large" label="LARGE" />
+      <Button variant="outlined" size="small">
+        SMALL
+      </Button>
+      <Button variant="outlined" size="medium">
+        MEDIUM
+      </Button>
+      <Button variant="outlined" size="large">
+        LARGE
+      </Button>
     </Grid>
   </Grid>
 </Wrapper>
@@ -151,19 +177,37 @@ For larger or smaller buttons, use the `size` prop.
 ```jsx
 <Grid spacing={3} direction="column">
   <Grid spacing={2}>
-    <Button variant="text" size="small" label="SMALL" />
-    <Button variant="text" size="medium" label="MEDIUM" />
-    <Button variant="text" size="large" label="LARGE" />
+    <Button variant="text" size="small">
+      SMALL
+    </Button>
+    <Button variant="text" size="medium">
+      MEDIUM
+    </Button>
+    <Button variant="text" size="large">
+      LARGE
+    </Button>
   </Grid>
   <Grid spacing={2}>
-    <Button variant="contained" size="small" label="SMALL" />
-    <Button variant="contained" size="medium" label="MEDIUM" />
-    <Button variant="contained" size="large" label="LARGE" />
+    <Button variant="contained" size="small">
+      SMALL
+    </Button>
+    <Button variant="contained" size="medium">
+      MEDIUM
+    </Button>
+    <Button variant="contained" size="large">
+      LARGE
+    </Button>
   </Grid>
   <Grid spacing={2}>
-    <Button variant="outlined" size="small" label="SMALL" />
-    <Button variant="outlined" size="medium" label="MEDIUM" />
-    <Button variant="outlined" size="large" label="LARGE" />
+    <Button variant="outlined" size="small">
+      SMALL
+    </Button>
+    <Button variant="outlined" size="medium">
+      MEDIUM
+    </Button>
+    <Button variant="outlined" size="large">
+      LARGE
+    </Button>
   </Grid>
 </Grid>
 ```
@@ -172,14 +216,20 @@ For larger or smaller buttons, use the `size` prop.
 
 <Wrapper>
   <Grid spacing={2} justifyContent="center">
-    <Button variant="contained" label="Success" color="#2e7d32" />
-    <Button variant="contained" label="Warning" color="#ed6c02" />
-    <Button variant="contained" label="Alert" color="#d32f2f" />
+    <Button variant="contained" color="#2e7d32">
+      Success
+    </Button>
+    <Button variant="contained" color="#ed6c02">
+      Warning
+    </Button>
+    <Button variant="contained" color="#d32f2f">
+      Alert
+    </Button>
   </Grid>
 </Wrapper>
 
 ```jsx
-<Button variant="contained" label="Success" color="#2e7d32" />
-<Button variant="contained" label="Warning" color="#ed6c02" />
-<Button variant="contained" label="Alert" color="#d32f2f" />
+<Button variant="contained" color="#2e7d32">Success</Button>
+<Button variant="contained" color="#ed6c02">Warning</Button>
+<Button variant="contained" color="#d32f2f">Alert</Button>
 ```

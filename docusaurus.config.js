@@ -26,7 +26,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
-          editUrl: "https://github.com/matozz/maze-doc",
+          editUrl: "https://github.com/matozz/maze-doc/blob/master",
           sidebarCollapsible: true,
         },
         theme: {

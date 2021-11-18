@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import useThemeContext from "@theme/hooks/useThemeContext";
 import { createTheme, ThemeProvider } from "maze-ui";
 
-export const Wrapper = ({ children, live }) => {
+export const Wrapper = ({ children, live, fullWidth }) => {
   const [mode, setMode] = useState<"light" | "dark">("light");
   const { isDarkTheme } = useThemeContext();
 
@@ -11,10 +11,13 @@ export const Wrapper = ({ children, live }) => {
   const theme = createTheme({
     mode: mode,
     components: {
-      ...["Button", "Switch", "Radio", "TextField"].reduce((comps, comp) => {
-        comps[comp] = { dark: { color: primaryDark }, light: {} };
-        return comps;
-      }, {}),
+      ...["Button", "Switch", "Radio", "CheckBox", "TextField"].reduce(
+        (comps, comp) => {
+          comps[comp] = { dark: { color: primaryDark }, light: {} };
+          return comps;
+        },
+        {}
+      ),
       Dialog: { dark: { backgroundColor: "#383838" } },
       DialogTitle: { dark: { color: "#eaeef3" } },
       DialogContentText: { dark: { color: "rgba(255, 255, 255, 0.7)" } },
@@ -29,7 +32,7 @@ export const Wrapper = ({ children, live }) => {
         position: "relative",
         outline: 0,
         marginBottom: live ? 0 : 24,
-        display: "flex",
+        display: !fullWidth ? "flex" : "block",
         justifyContent: "center",
         padding: 24,
         backgroundColor: isDarkTheme ? "rgb(10, 25, 41)" : "white",

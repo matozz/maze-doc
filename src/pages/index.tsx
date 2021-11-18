@@ -25,6 +25,7 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
+            style={{ fontWeight: 500, color: "#1976d2" }}
             to="/docs/getting-started/Installation"
           >
             <Translate id="home.start">Getting Started</Translate>

@@ -1,0 +1,106 @@
+---
+sidebar_position: 6
+---
+
+import { Grid, useTheme } from "maze-ui";
+import { Wrapper } from "/src/components/ComponentsWrapper";
+import { Item, Paper } from "/src/components/UtilComponents";
+
+# Grid
+
+The grid creates visual consistency between layouts while allowing flexibility across a wide variety of designs. Material Design's responsive UI is based on a 12-column grid layout.
+
+:::info Note
+
+The `Grid` component shouldn't be confused with a data grid; it is closer to a layout grid.
+
+:::
+
+## How it works
+
+The grid system is implemented with the Grid component:
+
+- It uses CSS's Flexible Box module for high flexibility.
+- Items have padding to create the spacing between individual items.
+- Item widths are fluid and sized relative to their parent element by default, or you can specify each `Grid` component's width.
+- Integer values can be given to each `Grid` component, indicating how many of the 12 available columns are occupied by the component.
+
+If you are new to or unfamiliar with flexbox, we encourage you to read this CSS-Tricks flexbox guide.
+
+## Basic grid
+
+Column widths are integer values is default to 12, to can set your own column widths.
+
+A value given to a breakpoint applies to all the other breakpoints wider than it (unless overridden, as you can read later in this page). For example, `lg={12}` sizes a component to occupy the whole viewport width regardless of its size.
+
+export const BasicGrid = () => (
+  <Wrapper fullWidth>
+    <Grid spacing={2} columns={12} direction="row" wrap="wrap">
+      <Grid lg={8}>
+        <Item>lg-8</Item>
+      </Grid>
+      <Grid lg={4}>
+        <Item>lg-4</Item>
+      </Grid>
+      <Grid lg={4}>
+        <Item>lg-4</Item>
+      </Grid>
+      <Grid lg={8}>
+        <Item>lg-8</Item>
+      </Grid>
+      <Grid lg={3}>
+        <Item>lg-3</Item>
+      </Grid>
+      <Grid lg={5}>
+        <Item>lg-5</Item>
+      </Grid>
+      <Grid lg={4}>
+        <Item>lg-4</Item>
+      </Grid>
+    </Grid>
+  </Wrapper>
+);
+
+<BasicGrid />
+
+```jsx live
+<Wrapper live fullWidth>
+  <Grid spacing={2} columns={12} direction="row" wrap="wrap">
+    <Grid lg={8}>
+      <Item>lg-8</Item>
+    </Grid>
+    <Grid lg={4}>
+      <Item>lg-4</Item>
+    </Grid>
+    <Grid lg={3}>
+      <Item>lg-3</Item>
+    </Grid>
+    <Grid lg={5}>
+      <Item>lg-5</Item>
+    </Grid>
+    <Grid lg={4}>
+      <Item>lg-4</Item>
+    </Grid>
+  </Grid>
+</Wrapper>
+```
+
+## Spacing
+
+To control space between children, use the `spacing` prop. The spacing value can be any positive number, including decimals and any string.
+
+```jsx live
+<Wrapper live fullWidth>
+  <Grid spacing={2} justifyContent="center">
+    <Grid>
+      <Paper>Paper1</Paper>
+    </Grid>
+    <Grid>
+      <Paper>Paper2</Paper>
+    </Grid>
+    <Grid>
+      <Paper>Paper3</Paper>
+    </Grid>
+  </Grid>
+</Wrapper>
+```
