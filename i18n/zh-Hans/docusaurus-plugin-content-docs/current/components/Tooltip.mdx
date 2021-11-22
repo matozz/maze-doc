@@ -1,0 +1,191 @@
+---
+sidebar_position: 8
+---
+
+import { useState } from "react";
+import { Grid, Tooltip, Button } from "maze-ui";
+import { Wrapper } from "/src/components/ComponentsWrapper";
+
+# Tooltip 工具提示
+
+当它触发时， Tooltips 会显示标识一个元素的文本标签，比如对该功能的描述。
+
+## Basic tooltip
+
+<Wrapper>
+  <Tooltip title="Show the full content">
+    <Button variant="text">Show</Button>
+  </Tooltip>
+</Wrapper>
+
+```jsx
+<Tooltip title="Show the full content">
+  <Button variant="text">Show</Button>
+</Tooltip>
+```
+
+## Positioned tooltips
+
+The Tooltip has 4 placements choice (will support 12 placements in future releases). They don't have directional arrows; instead, they rely on motion emanating from the source to convey direction.
+
+<Wrapper>
+  <Grid alignItems="center" direction="column" spacing={4}>
+    <Tooltip title="Top" position="top">
+      <Button variant="text">Top</Button>
+    </Tooltip>
+    <Grid spacing={6}>
+      <Tooltip title="Left" position="left">
+        <Button variant="text">Left</Button>
+      </Tooltip>
+      <Tooltip title="Right" position="right">
+        <Button variant="text">Right</Button>
+      </Tooltip>
+    </Grid>
+    <Tooltip title="Bottom" position="bottom">
+      <Button variant="text">Bottom</Button>
+    </Tooltip>
+  </Grid>
+</Wrapper>
+
+```jsx
+<Grid alignItems="center" direction="column" spacing={4}>
+  <Tooltip title="Top" position="top">
+    <Button variant="text">Top</Button>
+  </Tooltip>
+  <Grid spacing={6}>
+    <Tooltip title="Left" position="left">
+      <Button variant="text">Left</Button>
+    </Tooltip>
+    <Tooltip title="Right" position="right">
+      <Button variant="text">Right</Button>
+    </Tooltip>
+  </Grid>
+  <Tooltip title="Bottom" position="bottom">
+    <Button variant="text">Bottom</Button>
+  </Tooltip>
+</Grid>
+```
+
+## Arrow tooltips
+
+You can use the `arrow` prop to give your tooltip an arrow indicating which element it refers to.
+
+<Wrapper>
+  <Grid alignItems="center" spacing={2}>
+    <Tooltip title="Top" position="top" arrow>
+      <Button variant="text">Top</Button>
+    </Tooltip>
+    <Tooltip title="Bottom" position="bottom" arrow>
+      <Button variant="text">Bottom</Button>
+    </Tooltip>
+  </Grid>
+</Wrapper>
+
+```jsx
+<Grid alignItems="center" spacing={2}>
+  <Tooltip title="Top" position="top" arrow>
+    <Button variant="text">Top</Button>
+  </Tooltip>
+  <Tooltip title="Bottom" position="bottom" arrow>
+    <Button variant="text">Bottom</Button>
+  </Tooltip>
+</Grid>
+```
+
+## Customization
+
+Here are the example of customizing the component. You can customize the tooltip content by passing elements to the `title` prop.
+
+<Wrapper>
+  <Tooltip
+    title={
+      <div>
+        Tooltip with HTML
+        <br />
+        <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+        {"It's very engaging. Right?"}
+      </div>
+    }
+    containerStyle={{
+      background: "#f5f5f5",
+      color: "black",
+      border: "#dbdbdb 1px solid",
+      padding: 10,
+      fontSize: 14,
+      width: 240,
+    }}
+    arrowStyle={{
+      color: "#dbdbdb",
+    }}
+    position="right"
+    arrow
+  >
+    <Button variant="text">HTML</Button>
+  </Tooltip>
+</Wrapper>
+
+```jsx
+<Tooltip
+  title={
+    <div>
+      Tooltip with HTML
+      <br />
+      <em>{"And here's"}</em> <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+      {"It's very engaging. Right?"}
+    </div>
+  }
+  containerStyle={{
+    background: "#f5f5f5",
+    color: "black",
+    border: "#dbdbdb 1px solid",
+    padding: 10,
+    fontSize: 14,
+    width: 240,
+  }}
+  arrowStyle={{
+    color: "#dbdbdb",
+  }}
+  position="right"
+  arrow
+>
+  <Button variant="text">HTML</Button>
+</Tooltip>
+```
+
+## Disabled elements
+
+By default disabled elements like `<button>` do not trigger user interactions so a `Tooltip` will not activate on normal events like hover. To accommodate disabled elements, add a simple wrapper element, such as a `span` and disabled `pointerEvents` on `<button>`.
+
+<Wrapper>
+  <Tooltip
+    title="You don't have the permission to activate"
+    position="bottom"
+    arrow
+  >
+    <span>
+      <Button variant="text" disabled style={{ pointerEvents: "none" }}>
+        Activate
+      </Button>
+    </span>
+  </Tooltip>
+</Wrapper>
+
+:::info Note
+
+By default, we add the `not-allowed` cursor style to the `Input` element, such as `<Button>`, `<Radio>` and `<CheckBox>`, which remain the disabled button to have pointer-events. So simply add set there pointerEvents to `"none"` can solve this issue.
+
+:::
+
+```jsx
+<Tooltip
+  title="You don't have the permission to activate"
+  position="bottom"
+  arrow
+>
+  <span>
+    <Button variant="text" disabled style={{ pointerEvents: "none" }}>
+      Activate
+    </Button>
+  </span>
+</Tooltip>
+```

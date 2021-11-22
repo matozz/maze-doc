@@ -28,6 +28,7 @@ const config = {
           // Please change this to your repo.
           editUrl: "https://github.com/matozz/maze-doc/blob/master",
           sidebarCollapsible: true,
+          sidebarCollapsed: false,
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
