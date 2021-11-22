@@ -1,0 +1,38 @@
+---
+sidebar_position: 4
+---
+
+# Playground
+
+Edit the code below to see the change.
+
+```jsx live
+// don't delete the <Wrapper> component
+<Wrapper live>
+  <Grid
+    direction="column"
+    spacing={4}
+    alignment="center"
+    justifyContent="center"
+  >
+    <center style={{ fontWeight: "500", fontSize: 23, color: "#1976d2" }}>
+      Welcome to Maze
+    </center>
+    <Grid direction="column" justifyContent="center" spacing={3}>
+      <Button variant="outlined" style={{ justifyContent: "flex-start" }}>
+        <img src="https://minx.vercel.app/Google" alt="" height="24px" />
+        <span style={{ paddingLeft: 14, fontSize: 16 }}>
+          Sign up with Google
+        </span>
+      </Button>
+      <Button variant="outlined" style={{ justifyContent: "flex-start" }}>
+        <img src="https://minx.vercel.app/Meta" alt="" height="24px" />
+        <span style={{ paddingLeft: 14, fontSize: 16 }}>Sign up with Meta</span>
+      </Button>
+      <center style={{ fontSize: 14 }}>
+        <a href="">Terms & Privacy</a>
+      </center>
+    </Grid>
+  </Grid>
+</Wrapper>
+```

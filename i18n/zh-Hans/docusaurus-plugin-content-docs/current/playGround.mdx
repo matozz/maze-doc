@@ -1,0 +1,36 @@
+---
+sidebar_position: 4
+---
+
+# 试一试
+
+编辑代码来查看实时变化。
+
+```jsx live
+// 请保留 <Wrapper> 组件
+<Wrapper live>
+  <Grid
+    direction="column"
+    spacing={4}
+    alignment="center"
+    justifyContent="center"
+  >
+    <center style={{ fontWeight: "500", fontSize: 23, color: "#1976d2" }}>
+      欢迎来到 Maze 👏
+    </center>
+    <Grid direction="column" justifyContent="center" spacing={3}>
+      <Button variant="outlined" style={{ justifyContent: "flex-start" }}>
+        <img src="https://minx.vercel.app/Google" alt="" height="24px" />
+        <span style={{ paddingLeft: 14, fontSize: 16 }}>使用 Google 注册</span>
+      </Button>
+      <Button variant="outlined" style={{ justifyContent: "flex-start" }}>
+        <img src="https://minx.vercel.app/Meta" alt="" height="24px" />
+        <span style={{ paddingLeft: 14, fontSize: 16 }}>使用 Meta 注册</span>
+      </Button>
+      <center style={{ fontSize: 14 }}>
+        <a href="">条款和隐私</a>
+      </center>
+    </Grid>
+  </Grid>
+</Wrapper>
+```
