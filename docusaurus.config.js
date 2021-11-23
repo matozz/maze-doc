@@ -71,8 +71,9 @@ const config = {
           },
           {
             href: "https://github.com/matozz/maze",
-            label: "GitHub",
+            // label: "GitHub",
             position: "right",
+            className: "header-github-link",
           },
         ],
       },

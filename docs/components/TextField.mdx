@@ -5,6 +5,8 @@ sidebar_position: 2
 import { useState } from "react";
 import { Grid, TextField } from "maze-ui";
 import { Wrapper } from "/src/components/ComponentsWrapper";
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
 
 # Text Field
 
@@ -259,7 +261,13 @@ export const Controlls = () => {
 
 <Controlls />
 
+<Tabs className="lang-tabs">
+  <TabItem value="Javascript">
+
 ```jsx
+import { useState } from "react";
+import { Grid, TextField } from "maze-ui";
+
 export const MyComponent = () => {
   const [value, setValue] = useState("Hello World");
   return (
@@ -275,6 +283,34 @@ export const MyComponent = () => {
   );
 };
 ```
+
+</TabItem>
+  <TabItem value="TypeScript">
+
+```jsx
+import { useState, ChangeEvent, InputControlElement } from "react";
+import { Grid, TextField } from "maze-ui";
+
+export const MyComponent = () => {
+  const [value, setValue] = useState<string>("Hello World");
+  return (
+    <Grid spacing={2}>
+      <TextField
+        variant="outlined"
+        label="Controlled"
+        value={value}
+        onChange={(e: ChangeEvent<InputControlElement>) =>
+          setValue(e.target.value)
+        }
+      />
+      <TextField variant="outlined" label="Uncontrolled" defaultValue="foo" />
+    </Grid>
+  );
+};
+```
+
+  </TabItem>
+</Tabs>
 
 ## Helper text
 

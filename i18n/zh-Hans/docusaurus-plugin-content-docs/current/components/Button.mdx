@@ -133,13 +133,64 @@ All components accept an onClick handler that is applied to the root DOM element
 </Button>
 ```
 
+## Icon button
+
+Icon buttons are commonly found in app bars and toolbars.
+
+Icons are also appropriate for toggle buttons that allow a single choice to be selected or deselected, such as adding or removing a star to an item.
+
+:::info Notes
+
+You need to provide a third-party library icon or a `<img>` node to make the icon button work.
+Here are some of the libraries you can use.
+
+- **[Material Icons](http://google.github.io/material-design-icons/)**
+- **[Ant Design Icons](https://github.com/ant-design/ant-design-icons)**
+- **[Ionicons](https://ionicons.com/)**
+
+:::
+
+<Wrapper>
+  <Grid spacing={3}>
+    <Button variant="text" icon>
+      <MdDelete />
+    </Button>
+    <Button variant="text" icon disabled>
+      <MdGetApp />
+    </Button>
+    <Button variant="text" color="#ff9900" icon>
+      <MdNotifications />
+    </Button>
+    <Button variant="contained" icon preventElevation>
+      <MdDelete />
+    </Button>
+  </Grid>
+</Wrapper>
+
+```jsx
+<Grid spacing={2}>
+  <Button variant="text" icon>
+    <MdDelete />
+  </Button>
+  <Button variant="text" icon disabled>
+    <MdGetApp />
+  </Button>
+  <Button variant="text" color="#ff9900" icon>
+    <MdNotifications />
+  </Button>
+  <Button variant="contained" icon preventElevation>
+    <MdDelete />
+  </Button>
+</Grid>
+```
+
 ## Sizes
 
 For larger or smaller buttons, use the `size` prop.
 
 <Wrapper>
   <Grid spacing={3} direction="column">
-    <Grid spacing={2}>
+    <Grid spacing={2} justifyContent="center">
       <Button variant="text" size="small">
         SMALL
       </Button>
@@ -150,7 +201,7 @@ For larger or smaller buttons, use the `size` prop.
         LARGE
       </Button>
     </Grid>
-    <Grid spacing={2}>
+    <Grid spacing={2} justifyContent="center">
       <Button variant="contained" size="small">
         SMALL
       </Button>
@@ -161,7 +212,7 @@ For larger or smaller buttons, use the `size` prop.
         LARGE
       </Button>
     </Grid>
-    <Grid spacing={2}>
+    <Grid spacing={2} justifyContent="center">
       <Button variant="outlined" size="small">
         SMALL
       </Button>
@@ -177,7 +228,7 @@ For larger or smaller buttons, use the `size` prop.
 
 ```jsx
 <Grid spacing={3} direction="column">
-  <Grid spacing={2}>
+  <Grid spacing={2} justifyContent="center">
     <Button variant="text" size="small">
       SMALL
     </Button>
@@ -188,7 +239,7 @@ For larger or smaller buttons, use the `size` prop.
       LARGE
     </Button>
   </Grid>
-  <Grid spacing={2}>
+  <Grid spacing={2} justifyContent="center">
     <Button variant="contained" size="small">
       SMALL
     </Button>
@@ -199,7 +250,7 @@ For larger or smaller buttons, use the `size` prop.
       LARGE
     </Button>
   </Grid>
-  <Grid spacing={2}>
+  <Grid spacing={2} justifyContent="center">
     <Button variant="outlined" size="small">
       SMALL
     </Button>
